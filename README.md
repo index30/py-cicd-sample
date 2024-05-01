@@ -41,6 +41,7 @@ $ rye add (LIBRARY)
 ### 実行確認
 
 - FastAPIの実行確認用のスクリプトを作る
+    - [公式](https://fastapi.tiangolo.com/ja/#_4)に記載されているコードを流用
 
 
 
