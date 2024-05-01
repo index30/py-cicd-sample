@@ -17,3 +17,7 @@ jobs:
         run: rye sync
       - name: Run Pytest
         run: rye run python -m pytest
+      - name: Run uvicorn
+        run: rye run uvicorn main:app --reload
+      - name: Run locust
+        run: rye run locust --host=http://127.0.0.1:8000 --headless -u 5 --run-time 60
