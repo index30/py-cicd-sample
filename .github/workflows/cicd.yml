@@ -1,0 +1,14 @@
+name: FastAPI CI/CD
+run-name: Sample Run
+on:
+  push:
+    branches:
+      - main
+      - dev
+jobs:
+  cicd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: sksat/setup-rye
+      - uses: chartboost/ruff-action@v1
