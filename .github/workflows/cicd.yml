@@ -18,6 +18,9 @@ jobs:
       - name: Run Pytest
         run: rye run python -m pytest
       - name: Run uvicorn
-        run: rye run uvicorn main:app --reload
+        run: |- 
+          nohup rye run uvicorn main:app --reload > uvicorn.log 2>&1 & echo $! > uvicorn_pid.txt
       - name: Run locust
         run: rye run locust --host=http://127.0.0.1:8000 --headless -u 5 --run-time 60
+      - name: Shutdown uvicorn
+        run: kill -9 `cat uvicorn_pid.txt`
