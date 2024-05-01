@@ -23,7 +23,5 @@ jobs:
           nohup rye run uvicorn main:app --host=0.0.0.0 --port=8000 > uvicorn.log 2>&1 & echo $! > ../uvicorn_pid.txt
       - name: Run locust
         run: rye run locust --host=http://0.0.0.0:8000 --headless -u 1 --run-time 10
-      - name: ls
-        run: ls -la
       - name: Shutdown uvicorn
         run: kill -9 `cat uvicorn_pid.txt`
