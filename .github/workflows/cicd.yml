@@ -1,5 +1,4 @@
 name: FastAPI CI/CD
-run-name: Sample Run
 on:
   push:
     branches:
