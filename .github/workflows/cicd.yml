@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: sksat/setup-rye@v0.22.0
       - uses: chartboost/ruff-action@v1
         with:
           args: 'format --check'
+      - name: Sync Rye
+        run: rye sync
+      - name: Run Pytest
+        run: rye run python -m pytest
