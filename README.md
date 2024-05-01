@@ -42,6 +42,12 @@ $ rye add (LIBRARY)
 
 - FastAPIの実行確認用のスクリプトを作る
     - [公式](https://fastapi.tiangolo.com/ja/#_4)に記載されているコードを流用
-
-
+- formatter, linterの実行
+    ```bash
+    $ rye run ruff format --check # 配下のファイルのフォーマットチェック
+    $ rye run ruff format . # (エラーが起きた場合)フォーマット実行
+    $ rye run ruff check . --fix # リンターチェックと、エラー時の修正
+    ```
+- GitHub Actionsの設定
+    - トリガーを設定し、Marketplaceにあるruff用のワークフローを挿入する
 
