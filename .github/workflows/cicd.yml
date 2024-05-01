@@ -20,8 +20,8 @@ jobs:
       - name: Run uvicorn
         run: |- 
           cd src
-          nohup rye run uvicorn main:app --reload > uvicorn.log 2>&1 & echo $! > uvicorn_pid.txt
+          nohup rye run uvicorn main:app --host=0.0.0.0 --port=8000 > uvicorn.log 2>&1 & echo $! > uvicorn_pid.txt
       - name: Run locust
-        run: rye run locust --host=http://127.0.0.1:8000 --headless -u 5 --run-time 60
+        run: rye run locust --host=http://0.0.0.0:8000 --headless -u 2 --run-time 30
       - name: Shutdown uvicorn
         run: kill -9 `cat uvicorn_pid.txt`
