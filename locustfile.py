@@ -17,6 +17,7 @@ def _(environment, **kw):
     else:
         environment.process_exit_code = 0
 
+
 class HelloWorldUser(HttpUser):
     @task
     def hello_world(self):
