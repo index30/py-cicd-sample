@@ -49,5 +49,33 @@ $ rye add (LIBRARY)
     $ rye run ruff check . --fix # リンターチェックと、エラー時の修正
     ```
 - GitHub Actionsの設定
-    - トリガーを設定し、Marketplaceにあるruff用のワークフローを挿入する
-
+    - トリガーを設定し、Marketplaceにあるrye・ruff用のワークフローを挿入する
+    ```yaml
+    steps:
+      - uses: actions/checkout@v4
+      # ryeのセットアップ
+      - uses: sksat/setup-rye@v0.22.0
+      # ruffのセットアップ
+      - uses: chartboost/ruff-action@v1
+        with:
+          args: 'format --check'
+      - name: Sync Rye
+        run: rye sync
+    ```
+    - pytestの実行
+    ```yaml
+      - name: Run Pytest
+        run: rye run python -m pytest
+    ```
+    - locustの実行
+      - uvicornを使った検証としたため、nohupによるバックグラウンド実行を行い、シャットダウンする形に
+    ```yaml
+      - name: Run uvicorn
+        run: |- 
+          cd src
+          nohup rye run uvicorn main:app --host=0.0.0.0 --port=8000 > uvicorn.log 2>&1 & echo $! > ../uvicorn_pid.txt
+      - name: Run locust
+        run: rye run locust --host=http://0.0.0.0:8000 --headless -u 1 --run-time 10
+      - name: Shutdown uvicorn
+        run: kill -9 `cat uvicorn_pid.txt`
+    ```
