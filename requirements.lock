@@ -13,13 +13,39 @@ annotated-types==0.6.0
 anyio==4.3.0
     # via httpx
     # via starlette
+blinker==1.8.1
+    # via flask
+brotli==1.1.0
+    # via geventhttpclient
 certifi==2024.2.2
+    # via geventhttpclient
     # via httpcore
     # via httpx
+    # via requests
+charset-normalizer==3.3.2
+    # via requests
 click==8.1.7
+    # via flask
     # via uvicorn
+configargparse==1.7
+    # via locust
 fastapi==0.110.3
     # via py-cicd-sample
+flask==3.0.3
+    # via flask-cors
+    # via flask-login
+    # via locust
+flask-cors==4.0.0
+    # via locust
+flask-login==0.6.3
+    # via locust
+gevent==24.2.1
+    # via geventhttpclient
+    # via locust
+geventhttpclient==2.2.1
+    # via locust
+greenlet==3.0.3
+    # via gevent
 h11==0.14.0
     # via httpcore
     # via uvicorn
@@ -30,20 +56,43 @@ httpx==0.27.0
 idna==3.7
     # via anyio
     # via httpx
+    # via requests
 iniconfig==2.0.0
     # via pytest
+itsdangerous==2.2.0
+    # via flask
+jinja2==3.1.3
+    # via flask
+locust==2.26.0
+    # via py-cicd-sample
+markupsafe==2.1.5
+    # via jinja2
+    # via werkzeug
+msgpack==1.0.8
+    # via locust
 packaging==24.0
     # via pytest
 pluggy==1.5.0
     # via pytest
+psutil==5.9.8
+    # via locust
 pydantic==2.7.1
     # via fastapi
 pydantic-core==2.18.2
     # via pydantic
 pytest==8.2.0
     # via py-cicd-sample
+pyzmq==26.0.2
+    # via locust
+requests==2.31.0
+    # via locust
+roundrobin==0.0.4
+    # via locust
 ruff==0.4.2
     # via py-cicd-sample
+setuptools==69.5.1
+    # via zope-event
+    # via zope-interface
 sniffio==1.3.1
     # via anyio
     # via httpx
@@ -53,5 +102,16 @@ typing-extensions==4.11.0
     # via fastapi
     # via pydantic
     # via pydantic-core
+urllib3==2.2.1
+    # via geventhttpclient
+    # via requests
 uvicorn==0.29.0
     # via py-cicd-sample
+werkzeug==3.0.2
+    # via flask
+    # via flask-login
+    # via locust
+zope-event==5.0
+    # via gevent
+zope-interface==6.3
+    # via gevent
