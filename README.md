@@ -10,6 +10,7 @@
 ## 用意する環境
 - サンプルアプリ
     - [FastAPI](https://fastapi.tiangolo.com/ja/)
+    - uvicornのインストールも併せて行う
 - パッケージ管理
     - [Rye](https://rye-up.com/)
         - pipも利用できますが、[uv](https://github.com/astral-sh/uv)を使います
@@ -38,6 +39,7 @@ $ rye add (LIBRARY)
 ```
 
 ### 実行確認
+
 - FastAPIの実行確認用のスクリプトを作る
 
 
