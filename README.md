@@ -17,9 +17,9 @@
 - linter & formatter
     - [Ruff](https://docs.astral.sh/ruff/)
 - Unit Test
-    - pytest
+    - [pytest](https://docs.pytest.org/en/8.2.x/)
 - Integration Test
-    - locast(検討中)
+    - [locast](https://docs.locust.io/en/stable/index.html)
 
 ## 準備
 - 自分の作業ログとして残します。最新のインストール方法等は公式を参考にしてください。
