@@ -19,7 +19,7 @@
 - Unit Test
     - [pytest](https://docs.pytest.org/en/8.2.x/)
 - Integration Test
-    - [locast](https://docs.locust.io/en/stable/index.html)
+    - [locust](https://docs.locust.io/en/stable/index.html)
 
 ## 準備
 - 自分の作業ログとして残します。最新のインストール方法等は公式を参考にしてください。
